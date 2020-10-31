@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Carousel example</title>
+        <!-- import the webpage's stylesheet -->
+        <link rel="stylesheet" href="/css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+            integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+            crossorigin="anonymous"
+        />
+        <!-- import the webpage's javascript file -->
+        <script src="/js/script.js" defer></script>
+    </head>
+    <!-- Отключаем скролл на странице -->
+    <body>
+        <style>
+            html {
+                overflow: hidden;
+            }
+            div {
+                height: 2000px;
+            }
+        </style>
+        
+        <section class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide__container">
+                    
+                    <div class="carousel-slide active">
+                        <div class="carousel-slide__item">
+                            <img class="carousel-slide__img rotate-slide__1" src="/img/slide-1.jpg" alt="slide-img" />
+                            <h1 class="carousel-slide__title">
+                                Creative people line longer.
+                            </h1>
+                            <div class="carousel-slide__index square"><span>1</span></div>
+                            <p class="carousel-slide__info">
+                                Due to their openness, creative minds tend to live longer, and may even get more creative with age. Creative people react to stress, often seeing obstacles as something to be overcome rather than a barrier
+                                which can’t be breached.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <div class="carousel-slide__item">
+                            <img class="carousel-slide__img rotate-slide__2" src="/img/slide-2.jpg" alt="slide-img" />
+                            <h1 class="carousel-slide__title text-color__slide--2">
+                                Positivity makes more creative.
+                            </h1>
+                            <div class="carousel-slide__index triangle"><span></span></div>
+                            <p class="carousel-slide__info text-color__slide--2">
+                                While it’s often thought that a case of the blues will get the creative juices flowing, it turns out happiness and motivation actually bring out the highest levels of creative activity
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <div class="carousel-slide__item">
+                            <img class="carousel-slide__img rotate-slide__3" src="/img/slide-3.jpg" alt="slide-img" />
+                            <h1 class="carousel-slide__title text-color__slide--3">
+                                Creativity is additive.
+                            </h1>
+                            <div class="carousel-slide__index square square-3"><span></span></div>
+                            <p class="carousel-slide__info text-color__slide--3">
+                                Everyday creative activity is crucial for creative behaviour. Similar to the notion that practice makes perfect, exercising the creative muscles in your brain is known to boost creative accomplishment
+                            </p>
+                        </div>
+                    </div>
+                    <!-- ./carousel-slide__container -->
+                </div>
+                <!-- ./carousel-container -->
+            </div>
+            
+            <button class="button previous">prev</button>
+            <button class="button next">next</button>
+            
+        </section>
+
+    </body>
+</html>

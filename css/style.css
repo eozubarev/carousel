@@ -1,0 +1,314 @@
+
+/* ========= FONTS =======================================================================================================================================*/
+  /* Подключаем шрифты локально */
+  @font-face {
+    font-family: "AftenScreen";
+    font-style: normal;
+    font-weight: 400;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("AftenScreen"),
+         /* Если не получилось, загрузит ttf */
+         url("/fonts/aften_screen.ttf") format("ttf"),
+         /* Если браузер не поддерживает ttf, загрузит woff */
+         url("/fonts/aften_screen.woff") format("woff");
+  }
+  /* ========= FONTS =======================================================================================================================================*/
+
+  /* ========= COPMONENTS =======================================================================================================================================*/
+ {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #9ED5EE;
+    font-family: "AftenScreen", sans-serif;;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  
+  .carousel {
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    background: #9ED5EE;
+  }
+  
+  .carousel-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    transition: transform 650ms ease-in-out;
+  }
+
+  .carousel-slide__item {
+    position: relative;
+  }
+  /* ========= COPMONENTS =======================================================================================================================================*/
+
+  .carousel-slide__img {
+    width: 400px;
+    max-width: 100%;
+    position: absolute;
+    display: block;
+    top: -40px;   
+    left: 470px;
+    z-index: -1;
+  }
+
+  /* ========= ANIMATION ROTATE-SLIDE + OPACITY =======================================================================================================================================*/
+  .rotate-slide__1 {
+    transition: all 300ms ease-in;
+    transition-delay: 300ms;
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  .rotate-slide__2 {
+    transition: all 300ms ease-in;
+    transition-delay: 300ms;
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  .rotate-slide__3 {
+    transition: all 300ms ease-in;
+    transition-delay: 300ms;
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+
+  .carousel-slide.active .rotate-slide__1 {
+    opacity: 1;
+    transform: rotate(12deg);
+  }
+  .carousel-slide.active .rotate-slide__2 {
+    opacity: 1;
+    transform: rotate(-12deg);
+  }
+  .carousel-slide.active .rotate-slide__3 {
+    opacity: 1;
+    transform: rotate(11deg);
+  }
+  /* ========= ANIMATION ROTATE =======================================================================================================================================*/
+
+  /* ========= ANIMATION TITLE+INFO(OPACITY) =======================================================================================================================================*/
+  .carousel-slide__title {
+    max-width: 50%;
+    font-size: 75px;
+    color: #05367B;
+
+    transition: opacity 500ms ease-in;
+    transition-delay: 500ms;
+    opacity: 0;
+  }
+  .carousel-slide__info {
+    max-width: 35%;
+    letter-spacing: 1px;
+    line-height: 27px;
+    font-size: 19px;
+    color: #05367B;
+
+    transition: opacity 700ms ease-in;
+    transition-delay: 700ms;
+    opacity: 0;
+  }
+
+  .carousel-slide.active .carousel-slide__title {
+    opacity: 1;
+  }
+  .carousel-slide.active .carousel-slide__info {
+    opacity: 1;
+  }
+  /* ========= ANIMATION TITLE+INFO(OPACITY) =======================================================================================================================================*/
+
+  /* ========= SLIDES PERSONAL STYLES =======================================================================================================================================*/
+  .text-color__slide--1 {
+    color: inherit;
+  }
+  .text-color__slide--2 {
+    color: #E63A1A;
+  }
+  .text-color__slide--3 {
+    color: #891C37;
+  }
+  /* ========= SLIDES PERSONAL STYLES =======================================================================================================================================*/
+
+  .carousel-slide {
+    text-align: left;
+    z-index: 5;
+    position: relative;
+    flex-shrink: 0;
+    max-width: 100%;
+    height: 715px;
+    padding: 50px 115px 50px 115px;
+    scroll-snap-type: x mandatory;
+  }
+
+  /* ========= ANIMATION FIGURED =======================================================================================================================================*/
+      /* SQUARE START*/
+  .square {
+    position: absolute;
+    top: 300px;
+    z-index: 10;
+    right: -90px;
+    top: 200px;
+
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: #F3CD2E;
+    border-radius: 0%;
+
+    transform: rotate(50deg);
+    opacity: 0;
+
+    transition: all 400ms ease-in;
+    transition-delay: 400ms;
+  }
+  .square span {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    font-size: 50px;
+    color: #FDA1A2;
+    
+
+    transform: rotate(15deg);
+  }
+
+  .carousel-slide.active .square {
+    transform: rotate(-15deg);
+    opacity: 1;
+  }
+      /* SQUARE END*/
+      /* TRIANGLE START*/
+  .triangle {
+    position: absolute;
+    top: 300px;
+    z-index: 10;
+    right: -90px;
+    top: 190px;
+
+    display: block;
+    width: 0; 
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #E63A1A;
+
+    transform: rotate(50deg);
+    opacity: 0;
+
+    transition: all 400ms ease-in;
+    transition-delay: 400ms;
+  }
+  .triangle span {
+    position: absolute;
+    top: 35px;
+    left: -10px;
+    font-size: 50px;
+    color: #FEC659;
+    
+    transform: rotate(-19deg);
+  }
+
+  .carousel-slide.active .triangle {
+    transform: rotate(19deg);
+    opacity: 1;
+  }
+      /* TRIANLGE END*/
+      /* SQUARE 3 START*/
+      .square-3 {
+        background: #891C37;
+      }
+
+      .square-3 span {
+        transform: rotate(24deg);
+      }
+
+      .carousel-slide.active .square-3 {
+        transform: rotate(-27deg);
+        opacity: 1;
+      }
+      /* SQUARE 3 END*/
+/* ========= ANIMATION FIGURED =======================================================================================================================================*/
+
+/* ========= BUTTONS =======================================================================================================================================*/
+  .button {
+    position: absolute;
+    top: 300px;
+    z-index: 10;
+
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: .04em;
+
+    border: 0;
+    border-radius: 50%;
+    padding: 29px 18px;
+
+    background: #05367A;
+    color: #FDA1A2;
+
+    cursor: pointer;
+    text-align: center;
+    
+    transform: scale(0.9);
+    transition: all 150ms ease-in;
+
+    outline: none;
+  }
+  .button:hover {
+    background: #094dac;
+    transform: scale(1);
+  }
+  
+  .button.previous {
+    right: 35px;
+    top: 10%;
+  }
+  
+  .button.next {
+    right: 35px;
+    top: 21%;
+  }
+
+.--disabled {
+    opacity: .5;
+    cursor: inherit;
+  }
+.--disabled:hover {
+    transform: scale(0.9);
+  }
+/* ========= ANIMATION FIGURED =======================================================================================================================================*/
+
+/* ========= SLIDES BACKGROUND =======================================================================================================================================*/
+
+  
+  .carousel-slide:nth-child(1) {
+    background: #FDA1A2;
+  }
+  
+  .carousel-slide:nth-child(2) {
+    background: #FEC65A;
+  }
+  
+  .carousel-slide:nth-child(3) {
+    background: #9ED5EE;
+  }
+/* ========= SLIDES BACKGROUND =======================================================================================================================================*/
+  
+/* ========= MEDIA =======================================================================================================================================*/
+  @media(min-width: 1630px) {
+    .carousel-slide__img {
+      left: 600px;
+    }
+  }
+  @media(min-width: 1992px) {
+    .carousel-slide__img {
+      left: 765px;
+    }
+  }
+/* ========= MEDIA =======================================================================================================================================*/
